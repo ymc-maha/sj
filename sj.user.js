@@ -5,7 +5,7 @@
 // @grant       none
 // @require     http://code.jquery.com/jquery-2.1.0.min.js
 // @run-at      document-end
-// @version     0.2.0
+// @version     0.2.1
 // @updateURL   https://raw.githubusercontent.com/ymc-maha/sj/master/sj.meta.js
 // @downloadURL https://raw.githubusercontent.com/ymc-maha/sj/master/sj.user.js
 // ==/UserScript==
@@ -28,6 +28,11 @@
                 {
                     id: 'mentalist',
                     name: 'Mentalist',
+                    quality: '720p'
+                },
+                {
+                    id: 'ncisla',
+                    name: 'NCIS.Los.Angeles',
                     quality: '720p'
                 }
             ];
