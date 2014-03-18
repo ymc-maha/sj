@@ -5,7 +5,7 @@
 // @grant       none
 // @require     http://code.jquery.com/jquery-2.1.0.min.js
 // @run-at      document-end
-// @version     0.1.1
+// @version     0.2.0
 // @updateURL   https://raw.githubusercontent.com/ymc-maha/sj/master/sj.meta.js
 // @downloadURL https://raw.githubusercontent.com/ymc-maha/sj/master/sj.user.js
 // ==/UserScript==
@@ -24,24 +24,49 @@
         constructor: SerienJunkies,
 
         init: function (options) {
-            var that = this;
-            this.shows = {
-                mentalist: 'Mentalist',
-                ncisla: 'NCIS.Los.Angeles',
-                ncis: 'NCIS.S',
-                hawaii: 'Hawaii.Five'
-            };
+            this.shows = [
+                {
+                    id: 'mentalist',
+                    name: 'Mentalist',
+                    quality: '720p'
+                }
+            ];
+
             this.$container = $('.post-content');
             this.$model = null;
             this.createNewsModel();
+            this.findAndAppendLinks();
             this.$container.prepend(this.$model);
         },
 
         createNewsModel: function () {
-            this.$model = $('<fieldset><legend>Meine Serien</legend></fieldset>');
+            var that = this;
+            this.$model = $('<fieldset><legend>Meine Serien</legend><div class="content"></div></fieldset>');
+
+            $(this.shows).each(function () {
+                var $ul = $('<ul class="' + this.id + '"></ul>');
+                that.$model.find('div.content').append($ul);
+            });
+        },
+
+        findAndAppendLinks: function () {
+            var that = this;
+
+            $('a').each(function () {
+                var text = $(this).text(),
+                    $a = $(this);
+
+                $(that.shows).each(function () {
+                    if (text.indexOf(this.name) != -1 && text.indexOf(this.quality) != -1) {
+                        var $li = $('<li></li>');
+                        if (text.indexOf('German') != -1 || text.indexOf('GERMAN') != -1) {
+                            that.$model.find('ul.' + this.id).append($li.append($a));
+                        }
+
+                    }
+                });
+            });
         }
-
-
     };
 
     var options = null;
