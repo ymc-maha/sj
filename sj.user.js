@@ -5,7 +5,7 @@
 // @grant       none
 // @require     http://code.jquery.com/jquery-2.1.0.min.js
 // @run-at      document-end
-// @version     0.2.2
+// @version     0.3.0
 // @updateURL   https://raw.githubusercontent.com/ymc-maha/sj/master/sj.meta.js
 // @downloadURL https://raw.githubusercontent.com/ymc-maha/sj/master/sj.user.js
 // ==/UserScript==
@@ -15,57 +15,29 @@
 
     "use strict";
 
-    var SerienJunkies = function (options) {
-        this.init(options);
+    var SerienJunkies = function (shows) {
+        this.init(shows);
     };
 
     SerienJunkies.prototype = {
 
         constructor: SerienJunkies,
 
-        init: function (options) {
-            this.shows = [
-                {
-                    id: 'mentalist',
-                    name: 'Mentalist',
-                    quality: '720p'
-                },
-                {
-                    id: 'ncisla',
-                    name: 'NCIS.Los.Angeles',
-                    quality: '720p'
-                }
-            ];
-
+        init: function (shows) {
+            this.shows = shows;
             this.$container = $('.post-content');
             this.$tpl = null;
             this.createTemplate();
             this.findAndAppendLinks();
-            this.initObserver();
-
             this.$container.prepend(this.$tpl);
-        },
-
-        initObserver: function () {
-            var that = this;
-            this.$tpl.on('click', 'button.add', function () {
-                var $options = that.$tpl.find('div.options');
-                if ($options.css('display') == 'none') {
-                    that.$tpl.find('div.options').show();
-                } else {
-                    that.$tpl.find('div.options').hide();
-                }
-            });
         },
 
         createTemplate: function () {
             var $body = $('<fieldset></fieldset>'),
-                $title = $('<legend>Meine Serien <button class="add">+</button></legend>'),
-                $content = $('<div class="content"></div>'),
-                $options = $('<div class="options">lala</div>').hide();
+                $title = $('<legend>Meine Serien</legend>'),
+                $content = $('<div class="content"></div>');
 
             $body.append($title)
-                .append($options)
                 .append($content);
 
             $(this.shows).each(function () {
@@ -79,7 +51,7 @@
         findAndAppendLinks: function () {
             var that = this;
 
-            $('a').each(function () {
+            this.$container.find('a').each(function () {
                 var text = $(this).text(),
                     $a = $(this);
 
@@ -96,7 +68,19 @@
         }
     };
 
-    var options = null;
-    new SerienJunkies(options);
+    var shows = [
+        {
+            id: 'mentalist',
+            name: 'Mentalist',
+            quality: '720p'
+        },
+        {
+            id: 'ncisla',
+            name: 'NCIS.Los.Angeles',
+            quality: '720p'
+        }
+    ];
+    ;
+    new SerienJunkies(shows);
 
 }(window.jQuery));
