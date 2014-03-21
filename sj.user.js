@@ -5,7 +5,7 @@
 // @grant       none
 // @require     http://code.jquery.com/jquery-2.1.0.min.js
 // @run-at      document-end
-// @version     0.3.0
+// @version     0.3.1
 // @updateURL   https://raw.githubusercontent.com/ymc-maha/sj/master/sj.meta.js
 // @downloadURL https://raw.githubusercontent.com/ymc-maha/sj/master/sj.user.js
 // ==/UserScript==
@@ -78,9 +78,44 @@
             id: 'ncisla',
             name: 'NCIS.Los.Angeles',
             quality: '720p'
+        },
+        {
+            id: 'ncis',
+            name: 'NCIS.S',
+            quality: '720p'
+        },
+        {
+            id: 'hawaii',
+            name: 'Hawaii.Five.0',
+            quality: '720p'
+        },
+        {
+            id: 'brokegirls',
+            name: '2.Broke.Girls',
+            quality: '720p'
+        },
+        {
+            id: 'mother',
+            name: 'How.I.Met.Your.Mother',
+            quality: '720p'
+        },
+        {
+            id: 'bigbang',
+            name: 'The.Big.Bang.Theory',
+            quality: '720p'
+        },
+        {
+            id: 'suburgatory',
+            name: 'Suburgatory',
+            quality: '720p'
+        },
+        {
+            id: 'mum',
+            name: 'Mike.und.Molly',
+            quality: '720p'
         }
     ];
-    ;
+
     new SerienJunkies(shows);
 
 }(window.jQuery));
