@@ -5,7 +5,7 @@
 // @grant       GM_addStyle
 // @require     http://code.jquery.com/jquery-2.1.0.min.js
 // @run-at      document-end
-// @version     0.3.2
+// @version     0.3.3
 // @updateURL   https://raw.githubusercontent.com/ymc-maha/sj/master/sj.meta.js
 // @downloadURL https://raw.githubusercontent.com/ymc-maha/sj/master/sj.user.js
 // ==/UserScript==
@@ -35,7 +35,7 @@
         createTemplate: function () {
             var $body = $('<fieldset class="personal"></fieldset>'),
                 $title = $('<legend>Meine Serien</legend>'),
-                $content = $('<div class="content"></div>');
+                $content = $('<div class="content" style="border: none;"></div>');
 
             $body.append($title)
                 .append($content);
@@ -116,6 +116,8 @@
         }
     ];
 
-    new SerienJunkies(shows);
+    if ($('#gnav .current_page_item a').text() == "Home") {
+        new SerienJunkies(shows);
+    }
 
 }(window.jQuery));
