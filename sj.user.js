@@ -112,6 +112,7 @@
         },
 
         scrollToShow: function ($target) {
+            $($target).attr('style', 'background-color: red');
             $('html, body').animate({ scrollTop:$($target).offset().top },'slow');
             this.removeItem();
         }
