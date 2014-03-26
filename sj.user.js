@@ -2,10 +2,10 @@
 // @name        Serienjunkies Customer
 // @namespace   maha
 // @include     http://serienjunkies.org/*
-// @grant       GM_addStyle
+// @grant       none
 // @require     http://code.jquery.com/jquery-2.1.0.min.js
 // @run-at      document-end
-// @version     0.3.3
+// @version     0.4.0
 // @updateURL   https://raw.githubusercontent.com/ymc-maha/sj/master/sj.meta.js
 // @downloadURL https://raw.githubusercontent.com/ymc-maha/sj/master/sj.user.js
 // ==/UserScript==
@@ -26,10 +26,39 @@
         init: function (shows) {
             this.shows = shows;
             this.$container = $('.post-content');
+            this.$navigation = $('#gnav');
             this.$tpl = null;
-            this.createTemplate();
-            this.findAndAppendLinks();
-            this.$container.prepend(this.$tpl);
+
+            if (this.$navigation.find('.current_page_item a').text() == "Home") {
+                //this.readItem();
+                this.createTemplate();
+                this.findAndAppendLinks();
+                this.$container.prepend(this.$tpl);
+                this.initObserver();
+            }
+            this.findShow();
+
+        },
+
+        initObserver: function () {
+            var that = this;
+            this.$container.on('click', 'a.show', function (e) {
+                e.preventDefault();
+                that.storeItem($(this).text());
+                document.location = $(this).data('target');
+            });
+        },
+
+        storeItem: function (value) {
+            window.localStorage.setItem('sj-show', value);
+        },
+
+        readItem: function () {
+            return window.localStorage.getItem('sj-show');
+        },
+
+        removeItem: function () {
+            window.localStorage.removeItem('sj-show');
         },
 
         createTemplate: function () {
@@ -53,7 +82,7 @@
 
             this.$container.find('a').each(function () {
                 var text = $(this).text(),
-                    $a = $(this);
+                    $a = that.prepareAnchor($(this));
 
                 $(that.shows).each(function () {
                     if (text.indexOf(this.name) != -1 && text.indexOf(this.quality) != -1) {
@@ -65,6 +94,26 @@
                     }
                 });
             });
+        },
+
+        prepareAnchor: function ($anchor) {
+            $anchor.attr('data-target', $anchor.attr('href')).attr('href', '#').addClass('show');
+            return $anchor;
+        },
+
+        findShow: function () {
+            var show = this.readItem();
+            if (show) {
+                var $target = $('strong:contains("'+show+'")');
+                if ( typeof $target === 'object') {
+                    this.scrollToShow($target);
+                }
+            }
+        },
+
+        scrollToShow: function ($target) {
+            $('html, body').animate({ scrollTop:$($target).offset().top },'slow');
+            this.removeItem();
         }
     };
 
@@ -116,8 +165,8 @@
         }
     ];
 
-    if ($('#gnav .current_page_item a').text() == "Home") {
+    $(document).ready(function () {
         new SerienJunkies(shows);
-    }
+    });
 
 }(window.jQuery));
