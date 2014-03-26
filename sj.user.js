@@ -2,10 +2,10 @@
 // @name        Serienjunkies Customer
 // @namespace   maha
 // @include     http://serienjunkies.org/*
-// @grant       none
+// @grant       GM_addStyle
 // @require     http://code.jquery.com/jquery-2.1.0.min.js
 // @run-at      document-end
-// @version     0.3.1
+// @version     0.3.2
 // @updateURL   https://raw.githubusercontent.com/ymc-maha/sj/master/sj.meta.js
 // @downloadURL https://raw.githubusercontent.com/ymc-maha/sj/master/sj.user.js
 // ==/UserScript==
@@ -33,7 +33,7 @@
         },
 
         createTemplate: function () {
-            var $body = $('<fieldset></fieldset>'),
+            var $body = $('<fieldset class="personal"></fieldset>'),
                 $title = $('<legend>Meine Serien</legend>'),
                 $content = $('<div class="content"></div>');
 
@@ -41,7 +41,7 @@
                 .append($content);
 
             $(this.shows).each(function () {
-                var $ul = $('<ul class="' + this.id + '"></ul>');
+                var $ul = $('<ul style="padding-left: 0" class="' + this.id + '"></ul>');
                 $content.append($ul);
             });
 
@@ -57,7 +57,7 @@
 
                 $(that.shows).each(function () {
                     if (text.indexOf(this.name) != -1 && text.indexOf(this.quality) != -1) {
-                        var $li = $('<li></li>');
+                        var $li = $('<li style="padding-left: 0"></li>');
                         if (text.indexOf('German') != -1 || text.indexOf('GERMAN') != -1) {
                             that.$tpl.find('ul.' + this.id).append($li.append($a));
                         }
