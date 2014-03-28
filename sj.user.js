@@ -5,7 +5,7 @@
 // @grant       none
 // @require     http://code.jquery.com/jquery-2.1.0.min.js
 // @run-at      document-end
-// @version     0.4.0
+// @version     0.4.1
 // @updateURL   https://raw.githubusercontent.com/ymc-maha/sj/master/sj.meta.js
 // @downloadURL https://raw.githubusercontent.com/ymc-maha/sj/master/sj.user.js
 // ==/UserScript==
@@ -30,7 +30,6 @@
             this.$tpl = null;
 
             if (this.$navigation.find('.current_page_item a').text() == "Home") {
-                //this.readItem();
                 this.createTemplate();
                 this.findAndAppendLinks();
                 this.$container.prepend(this.$tpl);
@@ -166,7 +165,7 @@
         }
     ];
 
-    $(document).ready(function () {
+    $(window).load(function () {
         new SerienJunkies(shows);
     });
 
