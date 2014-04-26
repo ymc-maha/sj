@@ -162,6 +162,21 @@
             id: 'mum',
             name: 'Mike.und.Molly',
             quality: '720p'
+        },
+        {
+            id: 'sherlock',
+            name: 'Sherlock',
+            quality: '720p'
+        },
+        {
+            id: 'elementary',
+            name: 'Elementary',
+            quality: '720p'
+        },
+        {
+            id: 'blacklist',
+            name: 'The.Blacklist',
+            quality: '720p'
         }
     ];
 
