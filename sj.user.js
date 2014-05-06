@@ -5,7 +5,7 @@
 // @grant       none
 // @require     http://code.jquery.com/jquery-2.1.0.min.js
 // @run-at      document-end
-// @version     0.4.2
+// @version     0.4.3
 // @updateURL   https://raw.githubusercontent.com/ymc-maha/sj/master/sj.meta.js
 // @downloadURL https://raw.githubusercontent.com/ymc-maha/sj/master/sj.user.js
 // ==/UserScript==
@@ -176,6 +176,11 @@
         {
             id: 'blacklist',
             name: 'The.Blacklist',
+            quality: '720p'
+        },
+        {
+            id: 'helix',
+            name: 'Helix',
             quality: '720p'
         }
     ];
