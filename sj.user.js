@@ -5,7 +5,7 @@
 // @grant       none
 // @require     http://code.jquery.com/jquery-2.1.0.min.js
 // @run-at      document-end
-// @version     0.4.3
+// @version     0.4.4
 // @updateURL   https://raw.githubusercontent.com/ymc-maha/sj/master/sj.meta.js
 // @downloadURL https://raw.githubusercontent.com/ymc-maha/sj/master/sj.user.js
 // ==/UserScript==
@@ -181,6 +181,16 @@
         {
             id: 'helix',
             name: 'Helix',
+            quality: '720p'
+        },
+        {
+            id: 'hart',
+            name: 'Hart.of.Dixie',
+            quality: '720p'
+        },
+        {
+            id: 'greys',
+            name: 'Greys.Anatomy',
             quality: '720p'
         }
     ];
