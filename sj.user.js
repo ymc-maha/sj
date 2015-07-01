@@ -5,7 +5,7 @@
 // @grant       none
 // @require     http://code.jquery.com/jquery-2.1.0.min.js
 // @run-at      document-end
-// @version     0.4.8
+// @version     0.4.9
 // @updateURL   https://raw.githubusercontent.com/ymc-maha/sj/master/sj.meta.js
 // @downloadURL https://raw.githubusercontent.com/ymc-maha/sj/master/sj.user.js
 // ==/UserScript==
@@ -207,7 +207,7 @@
             id: 'diamond',
             name: 'Detective.Laura.Diamond',
             quality: '720p'
-        }
+        },
         {
             id: 'mom',
             name: 'Mom',
