@@ -5,7 +5,7 @@
 // @grant       none
 // @require     http://code.jquery.com/jquery-2.1.0.min.js
 // @run-at      document-end
-// @version     0.4.11
+// @version     0.4.12
 // @updateURL   https://raw.githubusercontent.com/ymc-maha/sj/master/sj.meta.js
 // @downloadURL https://raw.githubusercontent.com/ymc-maha/sj/master/sj.user.js
 // ==/UserScript==
@@ -216,6 +216,16 @@
         {
             id: 'rizzoli',
             name: 'Rizzoli',
+            quality: '720p'
+        },
+        {
+            id: 'new.orleans',
+            name: 'NCIS.New.Orleans',
+            quality: '720p'
+        },
+        {
+            id: 'Akte.X',
+            name: 'Akte.X',
             quality: '720p'
         }
     ];
