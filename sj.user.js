@@ -5,7 +5,7 @@
 // @grant       none
 // @require     http://code.jquery.com/jquery-2.1.0.min.js
 // @run-at      document-end
-// @version     0.4.12
+// @version     0.4.13
 // @updateURL   https://raw.githubusercontent.com/ymc-maha/sj/master/sj.meta.js
 // @downloadURL https://raw.githubusercontent.com/ymc-maha/sj/master/sj.user.js
 // ==/UserScript==
@@ -119,11 +119,6 @@
 
     var shows = [
         {
-            id: 'mentalist',
-            name: 'Mentalist',
-            quality: '720p'
-        },
-        {
             id: 'ncisla',
             name: 'NCIS.Los.Angeles',
             quality: '720p'
@@ -184,18 +179,8 @@
             quality: '720p'
         },
         {
-            id: 'hart',
-            name: 'Hart.of.Dixie',
-            quality: '720p'
-        },
-        {
             id: 'greys',
             name: 'Greys.Anatomy',
-            quality: '720p'
-        },
-        {
-            id: 'glades',
-            name: 'The.Glades',
             quality: '720p'
         },
         {
@@ -209,22 +194,17 @@
             quality: '720p'
         },
         {
-            id: 'mom',
-            name: 'Mom',
-            quality: '720p'
-        },
-        {
             id: 'rizzoli',
             name: 'Rizzoli',
             quality: '720p'
         },
         {
-            id: 'new.orleans',
+            id: 'orleans',
             name: 'NCIS.New.Orleans',
             quality: '720p'
         },
         {
-            id: 'Akte.X',
+            id: 'akte',
             name: 'Akte.X',
             quality: '720p'
         }
