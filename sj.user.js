@@ -5,7 +5,7 @@
 // @grant       none
 // @require     http://code.jquery.com/jquery-2.1.0.min.js
 // @run-at      document-end
-// @version     0.4.13
+// @version     0.4.14
 // @updateURL   https://raw.githubusercontent.com/ymc-maha/sj/master/sj.meta.js
 // @downloadURL https://raw.githubusercontent.com/ymc-maha/sj/master/sj.user.js
 // ==/UserScript==
@@ -63,7 +63,7 @@
         createTemplate: function () {
             var $body = $('<fieldset class="personal"></fieldset>'),
                 $title = $('<legend>Meine Serien</legend>'),
-                $content = $('<div class="content" style="border: none;"></div>');
+                $content = $('<div class="content" style="border: none; background: #f8f8f8 none repeat scroll 0 0; padding: 10px;"></div>');
 
             $body.append($title)
                 .append($content);
