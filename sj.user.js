@@ -5,7 +5,7 @@
 // @grant       none
 // @require     http://code.jquery.com/jquery-2.1.0.min.js
 // @run-at      document-end
-// @version     0.4.14
+// @version     0.4.15
 // @updateURL   https://raw.githubusercontent.com/ymc-maha/sj/master/sj.meta.js
 // @downloadURL https://raw.githubusercontent.com/ymc-maha/sj/master/sj.user.js
 // ==/UserScript==
@@ -139,23 +139,8 @@
             quality: '720p'
         },
         {
-            id: 'mother',
-            name: 'How.I.Met.Your.Mother',
-            quality: '720p'
-        },
-        {
             id: 'bigbang',
             name: 'The.Big.Bang.Theory',
-            quality: '720p'
-        },
-        {
-            id: 'suburgatory',
-            name: 'Suburgatory',
-            quality: '720p'
-        },
-        {
-            id: 'mum',
-            name: 'Mike.und.Molly',
             quality: '720p'
         },
         {
@@ -174,23 +159,8 @@
             quality: '720p'
         },
         {
-            id: 'helix',
-            name: 'Helix',
-            quality: '720p'
-        },
-        {
-            id: 'greys',
-            name: 'Greys.Anatomy',
-            quality: '720p'
-        },
-        {
             id: 'bones',
             name: 'Bones',
-            quality: '720p'
-        },
-        {
-            id: 'diamond',
-            name: 'Detective.Laura.Diamond',
             quality: '720p'
         },
         {
@@ -204,8 +174,13 @@
             quality: '720p'
         },
         {
-            id: 'akte',
-            name: 'Akte.X',
+            id: 'billions',
+            name: 'Billions',
+            quality: '720p'
+        },
+        {
+            id: 'lethal',
+            name: 'Lethal.Weapon',
             quality: '720p'
         }
     ];
